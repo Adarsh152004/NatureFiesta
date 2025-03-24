@@ -20,3 +20,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+function selectSize(button) {
+  // Remove active class from all size buttons
+  const sizeButtons = document.querySelectorAll('.size-btn');
+  sizeButtons.forEach((btn) => btn.classList.remove('active'));
+
+  // Add active class to clicked button
+  button.classList.add('active');
+}
