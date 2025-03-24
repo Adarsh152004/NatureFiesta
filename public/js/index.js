@@ -1,6 +1,6 @@
 /* eslint-disable */
-// import '@babel/polyfill';
-import { login } from './login';
+import '@babel/polyfill';
+import { login, logout } from './login';
 import { setupEventListeners } from './clickHack.js';
 
 // Call the function to attach event listeners
@@ -8,7 +8,7 @@ setupEventListeners();
 
 //DOM ELEMENTS
 const loginForm = document.querySelector('.form');
-// const logOutBtn = document.querySelector('.nav__el--logout');
+const logOutBtn = document.querySelector('.user-logged-in');
 
 if (loginForm) {
   loginForm.addEventListener('submit', (e) => {
@@ -19,6 +19,6 @@ if (loginForm) {
   });
 }
 
-// if (logOutBtn) {
-//   logOutBtn.addEventListener('click', logout);
-// }
+if (logOutBtn) {
+  logOutBtn.addEventListener('click', logout);
+}
