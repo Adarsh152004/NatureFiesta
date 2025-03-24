@@ -976,3 +976,235 @@ body {
 }
 
 /* Sproduct close //////////////// */
+
+/*contact*/
+.contact .header {
+  margin-top: 2.4rem;
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+
+.contact .row {
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+.contact form {
+  width: 90%;
+  height: 50rem;
+  margin: 0 auto;
+  background: #fff;
+  padding: 3rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  border: 2px solid #ddd;
+}
+
+.contact form:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.contact form .inputBox {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.contact .row .map {
+  width: 90%;
+  height: 50rem;
+  flex: 1 1 30rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  border: 2px solid #ddd;
+}
+
+.contact .row form {
+  padding: 2rem;
+  flex: 1 1 30rem;
+}
+
+.contact .row form .inputBox {
+  position: relative;
+}
+
+.contact .row form .inputBox input,
+.contact .row form .inputBox textarea {
+  width: 100%;
+  padding: 1.4rem 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1.6rem;
+  background: #f9f9f9;
+  color: #333;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.contact .row form .inputBox textarea {
+  resize: none;
+  height: 15rem;
+}
+
+.contact .row form .inputBox input:focus,
+.contact .row form .inputBox textarea:focus {
+  border-color: #cf47cf; /* A vibrant purple for focus state */
+  background: #f3f2fd; /* Subtle background change when focused */
+  outline: none;
+}
+
+.contact form .inputBox textarea {
+  height: 14rem;
+  resize: none;
+}
+
+.contact .row form .inputBox label {
+  position: absolute;
+  top: 13px;
+  left: 12px;
+  font-size: 1.4rem;
+  color: #aaa;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.contact .row form .inputBox input:focus ~ label,
+.contact .row form .inputBox textarea:focus ~ label,
+.contact .row form .inputBox input:valid ~ label,
+.contact .row form .inputBox textarea:valid ~ label {
+  top: -0.1rem;
+  font-size: 1.5rem;
+  color: #6c63ff;
+}
+
+.contact form .btn {
+  width: 100%;
+  padding: 1.4rem 1rem;
+  font-size: 1.8rem;
+  background: linear-gradient(135deg, #d24bc9, #9f36aa); /* Gradient effect */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact form .btn:hover {
+  background: linear-gradient(135deg, #2e54a2, #6c63ff);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.contact form .btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .contact form {
+    padding: 2.5rem 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .contact form .inputBox input,
+  .contact form .inputBox textarea {
+    font-size: 1.5rem;
+    padding: 1.2rem;
+  }
+
+  .contact form .inputBox label {
+    font-size: 1.3rem;
+  }
+
+  .contact form .btn {
+    font-size: 1.6rem;
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact .heading {
+    font-size: 2.5rem;
+  }
+
+  .contact form {
+    padding: 2rem;
+  }
+
+  .contact form .inputBox input,
+  .contact form .inputBox textarea {
+    font-size: 1.4rem;
+    padding: 1rem;
+  }
+
+  .contact form .inputBox label {
+    font-size: 1.2rem;
+  }
+
+  .contact form .btn {
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .contact .row {
+    flex-direction: column; /* Stack the map and form vertically */
+    padding: 1rem; /* Add some padding for smaller screens */
+  }
+
+  .contact .row .map {
+    width: 100%;
+    margin-bottom: 2rem; /* Add margin below the map for spacing */
+  }
+
+  .contact .row form {
+    width: 100%;
+  }
+
+  .contact .row form .inputBox input,
+  .contact .row form .inputBox textarea {
+    font-size: 1.5rem; /* Slightly reduce font size for smaller screens */
+  }
+
+  .contact .row form .inputBox label {
+    font-size: 1.5rem; /* Adjust label size for better fit */
+  }
+
+  .contact .row form .inputBox textarea {
+    height: 12rem; /* Reduce the height of the textarea on smaller screens */
+  }
+
+  .contact .row form .inputBox input,
+  .contact .row form .inputBox textarea {
+    padding: 0.8rem 0; /* Adjust padding for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .contact .row {
+    padding: 0.5rem; /* Further reduce padding for smaller screens */
+  }
+
+  .contact .row form .inputBox input,
+  .contact .row form .inputBox textarea {
+    font-size: 1.4rem; /* Reduce font size for very small screens */
+  }
+
+  .contact .row form .inputBox label {
+    font-size: 1.4rem; /* Adjust label size */
+  }
+
+  .contact .row form .inputBox textarea {
+    height: 10rem; /* Further reduce textarea height for very small screens */
+  }
+
+  .contact .row .map {
+    height: auto; /* Ensure map image height adjusts properly on small screens */
+  }
+}

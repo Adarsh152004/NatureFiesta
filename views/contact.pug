@@ -1,0 +1,28 @@
+extends base 
+
+block content 
+  
+  section.contact(id="Contact")
+    h1.heading Contact Us
+
+    .row
+      img.map(src="img/contact 5.avif" alt="" srcset="")
+
+      form(action="")
+        .inputBox
+          input(type="text" required)
+          label name
+
+        .inputBox
+          input(type="email" required)
+          label email
+
+        .inputBox
+          input(type="number" required)
+          label number
+
+        .inputBox
+          textarea(required name="" id="" cols="30" rows="10")
+          label message
+
+        input(type="submit" value="send message" class="btn")

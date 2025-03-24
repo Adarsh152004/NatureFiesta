@@ -28,6 +28,12 @@ exports.getCategory = catchAsync(async (req, res) => {
   });
 });
 
+exports.contact = catchAsync(async (req, res) => {
+  res.status(200).render('contact', {
+    title: 'Contact',
+  });
+});
+
 exports.getProduct = catchAsync(async (req, res) => {
   const product = await Product.findOne({ slug: req.params.slug });
 

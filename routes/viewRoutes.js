@@ -10,5 +10,6 @@ router.get('/categories/:category', viewsController.getCategories);
 router.get('/product/:slug', viewsController.getProduct);
 router.get('/login', viewsController.getLoginForm);
 router.get('/category', viewsController.getCategory);
+router.get('/contact', viewsController.contact);
 
 module.exports = router;
