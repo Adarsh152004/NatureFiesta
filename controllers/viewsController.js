@@ -25,7 +25,6 @@ exports.getCategories = catchAsync(async (req, res) => {
 exports.getCategory = catchAsync(async (req, res) => {
   res.status(200).render('categories', {
     title: 'Category',
-    categories,
   });
 });
 
