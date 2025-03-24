@@ -23,4 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const cartId = this.getAttribute('data-id');
     window.location.href = '/cart';
   });
+
+  cart.addEventListener('mouseenter', function () {
+    this.style.cursor = 'pointer'; // Change cursor to pointer on hover
+  });
 });

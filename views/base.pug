@@ -44,12 +44,15 @@ html(lang="en")
             form.main-bar-search(action="#")
               input.main-bar-search__input(type="text" placeholder="Search products...")
               i.fa-solid.fa-magnifying-glass(style="color: grey")
-            .main-bar-cart(data-id=cart)
-              i.fa-solid.fa-cart-shopping
-              if user
+            if user
+              .main-bar-cart
+                i.fa-solid.fa-cart-shopping
                 span.cart-count 4
-              else
+            else
+              .main-bar-cart
+                i.fa-solid.fa-cart-shopping
                 span.cart-count 0
+              
 
         .main-content
           block content 
