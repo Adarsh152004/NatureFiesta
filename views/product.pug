@@ -1,0 +1,63 @@
+extends base
+
+block content
+    div.product
+    div.product-detail
+        div.product-navigation
+        a.back-to-products(href="/")
+            i.fa-solid.fa-arrow-left
+            |  Back to Products
+        
+        div.product-detail-container
+        div.product-images
+            div.main-image-container
+            img.main-image#main-product-image(src=`/img/${product.category}/${product.imageCover}`, alt="Main Product Image")
+            
+            div.small-images-container
+            div.small-image-box.active
+                img.small-image(src="/img/Fertilizers/fer2.png", alt="Small Image 1", onclick="changeImage('/img/Fertilizers/fer2.png')")
+            div.small-image-box
+                img.small-image(src="/img/Fertilizers/fer2.png", alt="Small Image 2", onclick="changeImage('/img/Fertilizers/fer2.png')")
+            div.small-image-box
+                img.small-image(src="/img/Fertilizers/fer2.png", alt="Small Image 3", onclick="changeImage('/img/Fertilizers/fer2.png')")
+
+        div.product-details
+            h2.product-name#product-name Bonsai Plant
+            h3.product-price#product-price Rs. 200
+            
+            div.product-size-options
+            h4 Select Size:
+            div.size-buttons
+                button.size-btn.active Small
+                button.size-btn Medium
+                button.size-btn Large
+            
+            div.product-quantity
+            h4 Quantity:
+            div.quantity-selector
+                button.quantity-btn#decrease-qty -
+                input.qty-input#qty(type="text", value="1", readonly)
+                button.quantity-btn#increase-qty +
+            
+            div.product-description
+            h4 Product Details
+            p#product-description Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime ullam vitae cupiditate magni qui. A sint sunt quisquam ducimus repudiandae eos quibusdam? Officiis et dicta consectetur ad quaerat maiores nisi?
+            
+            div.product-buttons
+            button.add-to-cart-btn
+                i.fas.fa-shopping-cart
+                |  Add to Cart
+            button.buy-now-btn Buy Now
+
+            div.product-features
+            div.feature
+                i.fas.fa-truck
+                span Free Shipping
+            div.feature
+                i.fas.fa-undo
+                span Easy 30-day Returns
+            div.feature
+                i.fas.fa-shield-alt
+                span Quality Guarantee
+
+        p.section-title People also look like
