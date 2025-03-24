@@ -25,15 +25,22 @@ html(lang="en")
           a.nav-link(href="#")
             i.fa-solid.fa-user
         .auth
-          a.auth-link(href="/login")
-            i.fa-solid.fa-arrow-right-to-bracket.icon(style="color: #02c39a")
+          a.auth-link(class=user ? "user-logged-in" : "user-logged-out", href="/login")
+            if user
+              i.fa-solid.fa-arrow-right-from-bracket.icon(style="color: crimson")
+            else
+              i.fa-solid.fa-arrow-right-to-bracket.icon(style="color: #02c39a")
 
       main.main
         .main-container
           .main-bar
             .main-bar-address
-              p.main-bar-address-text 2464 Royal Ln. Mesa
-              span Your address
+              if user
+                p.main-bar-address-text 2464 Royal Ln. Mesa
+                span= `Hii, ${user.name} your address`
+              else
+                p.main-bar-address-text PLEASE LOGIN!!
+                span Left Bottom 👇
             form.main-bar-search(action="#")
               input.main-bar-search__input(type="text" placeholder="Search products...")
               i.fa-solid.fa-magnifying-glass(style="color: grey")
