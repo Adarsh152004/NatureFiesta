@@ -25,7 +25,7 @@ html(lang="en")
           a.nav-link(href="#")
             i.fa-solid.fa-user
         .auth
-          a.auth-link(class=user ? "user-logged-in" : "user-logged-out", href="/login")
+          a.auth-link(class=user ? "user-logged-in" : "user-logged-out", href=user ? "/logout" : "/login")
             if user
               i.fa-solid.fa-arrow-right-from-bracket.icon(style="color: crimson")
             else
@@ -44,9 +44,12 @@ html(lang="en")
             form.main-bar-search(action="#")
               input.main-bar-search__input(type="text" placeholder="Search products...")
               i.fa-solid.fa-magnifying-glass(style="color: grey")
-            .main-bar-cart
+            .main-bar-cart(data-id=cart)
               i.fa-solid.fa-cart-shopping
-              span.cart-count 2
+              if user
+                span.cart-count 4
+              else
+                span.cart-count 0
 
         .main-content
           block content 
@@ -54,3 +57,4 @@ html(lang="en")
   script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.8.4/axios.min.js")
   script(src="/js/card.js")
   script(src="/js/login.js")
+  script(src="/js/clickHack.js")
