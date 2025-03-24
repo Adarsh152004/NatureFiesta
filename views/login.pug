@@ -6,12 +6,13 @@ block content
     form.form
       .form_group
         label.form_label(for="email") Email Address
-        input.form_input(type="email" placeholder="example@gmail.com")
+        input#email.form_input(type="email", placeholder="example@gmail.com", required)
       .form_group
         label.form_label(for="password") Password
-        input.form_input(type="password" placeholder="........")
+        input#password.form_input(type="password", placeholder="••••••••", required, minlength='8')
       .form_group
-        a.btn(href="#") Login
+        button.btn Login
+        //- a.btn(href="#") Login
 
 
 
