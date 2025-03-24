@@ -27,13 +27,14 @@ app.use(cookieParser());
 // 1) GLOBAL Middleware
 app.use(express.static(path.join(__dirname, 'public'))); // Middleware to serve static files
 //  Set Security HTTP headers
+
 app.use(
   helmet({
     contentSecurityPolicy: {
       directives: {
         defaultSrc: ["'self'"],
         scriptSrc: ["'self'", 'https://cdnjs.cloudflare.com'],
-        // connectSrc: ["'self'", 'ws://127.0.0.1:52421'] // Allow WebSockets
+        connectSrc: ["'self'", 'ws://127.0.0.1:*', 'ws://localhost:*'], // ✅ Allow WebSockets on ANY port
       },
     },
   })
