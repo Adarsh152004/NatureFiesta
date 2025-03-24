@@ -1,10 +1,10 @@
 extends base
 
+
 mixin categoryCard(image, text)
-  a(href= `/categories/${text}` style="text-decoration: none")
-    div.main-content-categories-card
-      img.main-content-categories-card_img(src=`/img/static/${image}` alt="image")
-      p.main-content-categories-card_text= text
+  div.main-content-categories-card(data-id=text)
+    img.main-content-categories-card_img(src=`/img/static/${image}` alt="image")
+    p.main-content-categories-card_text= text
 
 block content
 
