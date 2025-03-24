@@ -1,5 +1,3 @@
-console.log('entered in script');
-
 document.addEventListener('DOMContentLoaded', function () {
   const productCards = document.querySelectorAll('.main-content-product-card');
   const categoryCards = document.querySelectorAll(

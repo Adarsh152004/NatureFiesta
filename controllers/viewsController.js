@@ -22,6 +22,13 @@ exports.getCategories = catchAsync(async (req, res) => {
   });
 });
 
+exports.getCategory = catchAsync(async (req, res) => {
+  res.status(200).render('categories', {
+    title: 'Category',
+    categories,
+  });
+});
+
 exports.getProduct = catchAsync(async (req, res) => {
   const product = await Product.findOne({ slug: req.params.slug });
 
