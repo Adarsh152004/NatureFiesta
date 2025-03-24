@@ -98,8 +98,12 @@ body {
   text-decoration: none;
 }
 
-.auth-link:hover {
-  background-color: #02c39919;
+.user-logged-in:hover {
+  background-color: #dc143c25; /* Light Red */
+}
+
+.user-logged-out:hover {
+  background-color: #02c39919; /* Light Green */
 }
 
 .nav {
