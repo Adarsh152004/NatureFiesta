@@ -3,13 +3,21 @@ const viewsController = require('../controllers/viewsController');
 const authController = require('../controllers/authController');
 const router = express.Router();
 
-router.use(authController.isLoggedIn);
+router.get('/', authController.isLoggedIn, viewsController.getOverview);
+router.get(
+  '/categories/:category',
+  authController.isLoggedIn,
+  viewsController.getCategories
+);
+router.get(
+  '/product/:slug',
+  authController.isLoggedIn,
+  viewsController.getProduct
+);
+router.get('/login', authController.isLoggedIn, viewsController.getLoginForm);
+router.get('/category', authController.isLoggedIn, viewsController.getCategory);
+router.get('/contact', authController.isLoggedIn, viewsController.contact);
 
-router.get('/', viewsController.getOverview);
-router.get('/categories/:category', viewsController.getCategories);
-router.get('/product/:slug', viewsController.getProduct);
-router.get('/login', viewsController.getLoginForm);
-router.get('/category', viewsController.getCategory);
-router.get('/contact', viewsController.contact);
+router.get('/me', authController.protect, viewsController.getAccount);
 
 module.exports = router;
