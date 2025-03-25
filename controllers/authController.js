@@ -40,6 +40,7 @@ exports.signup = catchAsync(async (req, res, next) => {
     name: req.body.name,
     email: req.body.email,
     password: req.body.password,
+    photo: req.body.photo,
     passwordConfirm: req.body.passwordConfirm,
     passwordChangedAt: req.body.passwordChangedAt,
     role: req.body.role,
@@ -58,8 +59,6 @@ exports.login = catchAsync(async (req, res, next) => {
 
   // 2) Check if user exists && password is correct
   const user = await User.findOne({ email }).select('+password');
-
-  console.log('User:', user); // Debugging
 
   if (!user || !(await user.correctPassword(password, user.password))) {
     return next(new AppError('Incorrect email or password', 401));
@@ -122,6 +121,7 @@ exports.protect = catchAsync(async (req, res, next) => {
   // GRANT ACCESS TO PROTECTED ROUTE
   req.user = currentUser;
   res.locals.user = currentUser;
+  console.log(res.locals.user);
   next();
 });
 
