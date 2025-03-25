@@ -5,7 +5,6 @@ import { setupEventListeners } from './clickHack.js';
 import { initializePage } from './product.js';
 
 // Call the function to attach event listeners
-setupEventListeners();
 
 //DOM ELEMENTS
 const loginForm = document.querySelector('.form');
@@ -23,3 +22,5 @@ if (loginForm) {
 if (logOutBtn) {
   logOutBtn.addEventListener('click', logout);
 }
+
+setupEventListeners();
