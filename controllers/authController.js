@@ -139,15 +139,13 @@ exports.isLoggedIn = async (req, res, next) => {
       if (!currentUser) {
         return next();
       }
-
-      console.log('Working' + currentUser);
       // 3) Check if user changed password after the token was issued
       if (currentUser.changedPasswordAfter(decoded.iat)) {
         return next();
       }
 
       // There is a logged in user
-      res.locals.user = currentUser;
+      console.log('Logged in user:', res.locals.user);
       return next();
     } catch (err) {
       return next();

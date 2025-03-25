@@ -34,6 +34,15 @@ exports.contact = catchAsync(async (req, res) => {
   });
 });
 
+exports.cart = catchAsync(async (req, res) => {
+  const products = await Product.find();
+
+  res.status(200).render('cart', {
+    title: 'Cart',
+    products,
+  });
+});
+
 exports.getProduct = catchAsync(async (req, res) => {
   const product = await Product.findOne({ slug: req.params.slug });
 
