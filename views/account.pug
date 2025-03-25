@@ -17,7 +17,7 @@ block content
         | Billing
     .user-content.flex-fix
       .user-content-profile
-        img.user-content-profile_picture(src="/img/users/hrishee.jpg" alt="your profile picture")
+        img.user-content-profile_picture(src=`/img/users/${user.photo}` alt=`${user.name}`)
         input.form__upload(type="file" name="photo" id="photo")
         label(for="photo")
           i.fa-solid.fa-user-pen.profile-edit__icon
