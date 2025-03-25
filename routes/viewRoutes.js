@@ -15,6 +15,8 @@ router.get(
   viewsController.getProduct
 );
 router.get('/login', authController.isLoggedIn, viewsController.getLoginForm);
+// router.get('/logout', authController.isLoggedIn);
+
 router.get('/category', authController.isLoggedIn, viewsController.getCategory);
 router.get('/contact', authController.isLoggedIn, viewsController.contact);
 
