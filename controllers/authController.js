@@ -121,7 +121,6 @@ exports.protect = catchAsync(async (req, res, next) => {
   // GRANT ACCESS TO PROTECTED ROUTE
   req.user = currentUser;
   res.locals.user = currentUser;
-  console.log(res.locals.user);
   next();
 });
 
@@ -145,6 +144,7 @@ exports.isLoggedIn = async (req, res, next) => {
       }
 
       // There is a logged in user
+      res.locals.user = currentUser;
       console.log('Logged in user:', res.locals.user);
       return next();
     } catch (err) {
@@ -194,7 +194,6 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
       message: 'Token send to email!',
     });
   } catch (err) {
-    console.log(err);
     user.passwordResetToken = undefined;
     user.passwordResetExpires = undefined;
     await user.save({ validateBeforeSave: false });
