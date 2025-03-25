@@ -30,10 +30,10 @@ block content
           form.form
             .form_group
               label.form_label(for="name") Name
-              input#name.form_input(type="text" value="Hrishee Prajapati")
+              input#name.form_input(type="text" value=`${user.name}`)
             .form_group
               label.form_label(for="email") Email Address
-              input.form_input(type="email" placeholder="example@gmail.com")
+              input.form_input(type="email" placeholder=`${user.email}`)
 
         .user-content-edit-password
           h2.form-heading Password change
