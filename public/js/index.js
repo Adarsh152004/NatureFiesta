@@ -2,6 +2,7 @@
 import '@babel/polyfill';
 import { login, logout } from './login';
 import { setupEventListeners } from './clickHack.js';
+import { initializePage } from './product.js';
 
 // Call the function to attach event listeners
 setupEventListeners();
