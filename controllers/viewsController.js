@@ -64,9 +64,12 @@ exports.getAccount = (req, res) => {
   });
 };
 
-exports.order = (req, res) => {
+exports.order = async (req, res) => {
+  const product = await Product.findOne({ slug: req.params.slug });
+
   res.status(200).render('orders', {
     title: 'Orders',
+    product,
   });
 };
 
