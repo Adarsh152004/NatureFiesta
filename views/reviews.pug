@@ -1,0 +1,30 @@
+extends account 
+
+block content
+    .user
+        include navigation
+        .user-content.flex-fix 
+            .user-content-reviews
+                h2.form-heading My Reviews
+                .review-list
+                    .review-card
+                        .review-header
+                            img.review-product-img(src="/img/products/product3.jpg" alt="Product")
+                            .review-product-info
+                                .review-product-name Organic Bamboo Cutting Board
+                                .review-date Reviewed on 2023-07-10
+                            .review-rating
+                                i.fas.fa-star
+                                i.fas.fa-star
+                                i.fas.fa-star
+                                i.fas.fa-star
+                                i.fas.fa-star-half-alt
+                        .review-text
+                            | Excellent product quality! The bamboo is thick and durable. Perfect for my kitchen needs.
+                        .review-images
+                            img.review-image(src="/img/reviews/review1.jpg" alt="Review")
+                            img.review-image(src="/img/reviews/review2.jpg" alt="Review")
+                        .review-actions
+                            button.review-action-btn Edit Review
+                            button.review-action-btn Delete Review
+                    .no-reviews No reviews found

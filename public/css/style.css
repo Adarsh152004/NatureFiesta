@@ -1608,3 +1608,447 @@ body {
 }
 
 /* OVERVIEW MEDIA QUERY END */
+
+/* Orders Section */
+.user-content-orders {
+  width: 100%;
+  padding: 1.6rem;
+}
+
+.order-history {
+  margin-top: 2rem;
+}
+
+.order-card {
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  padding: 1.6rem;
+  margin-bottom: 1.6rem;
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.order-id {
+  font-weight: bold;
+  color: #02c39a;
+}
+
+.order-date {
+  color: #777;
+}
+
+.order-status {
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.status-pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status-completed {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-cancelled {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.order-details {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.order-items {
+  flex: 2;
+}
+
+.order-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.order-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.order-item-img {
+  width: 8rem;
+  height: 8rem;
+  object-fit: cover;
+  border-radius: 0.8rem;
+}
+
+.order-item-info {
+  flex: 1;
+}
+
+.order-item-name {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.order-item-price {
+  color: #02c39a;
+  font-weight: bold;
+}
+
+.order-summary {
+  flex: 1;
+  background-color: #f9f9f9;
+  border-radius: 0.8rem;
+  padding: 1.6rem;
+}
+
+.order-summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.order-summary-label {
+  color: #777;
+}
+
+.order-summary-value {
+  font-weight: bold;
+}
+
+.order-total {
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  font-size: 1.6rem;
+}
+
+.order-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.6rem;
+}
+
+.order-action-btn {
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+
+.order-action-primary {
+  background-color: #02c39a;
+  color: white;
+}
+
+.order-action-secondary {
+  background-color: white;
+  border: 1px solid #02c39a;
+  color: #02c39a;
+}
+
+.no-orders {
+  text-align: center;
+  padding: 3rem;
+  color: #777;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .order-details {
+    flex-direction: column;
+  }
+
+  .order-items {
+    margin-bottom: 1.6rem;
+  }
+
+  .order-actions {
+    flex-direction: column;
+  }
+
+  .order-action-btn {
+    width: 100%;
+  }
+}
+
+/* Reviews Section */
+.user-content-reviews {
+  width: 100%;
+  padding: 1.6rem;
+}
+
+.review-list {
+  margin-top: 2rem;
+}
+
+.review-card {
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  padding: 1.6rem;
+  margin-bottom: 1.6rem;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.review-product-img {
+  width: 6rem;
+  height: 6rem;
+  object-fit: cover;
+  border-radius: 0.8rem;
+  margin-right: 1.6rem;
+}
+
+.review-product-info {
+  flex: 1;
+}
+
+.review-product-name {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.review-date {
+  color: #777;
+  font-size: 1.2rem;
+}
+
+.review-rating {
+  color: #ffb703;
+  margin-bottom: 1rem;
+}
+
+.review-text {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.review-images {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.review-image {
+  width: 8rem;
+  height: 8rem;
+  object-fit: cover;
+  border-radius: 0.8rem;
+  cursor: pointer;
+}
+
+.review-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.review-action-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border: none;
+  background-color: #f5f5f5;
+  color: #555;
+}
+
+.review-action-btn:hover {
+  background-color: #eee;
+}
+
+.no-reviews {
+  text-align: center;
+  padding: 3rem;
+  color: #777;
+}
+
+/* Billing Section */
+.user-content-billing {
+  width: 100%;
+  padding: 1.6rem;
+}
+
+.billing-container {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.billing-methods {
+  flex: 1;
+}
+
+.billing-history {
+  flex: 2;
+}
+
+.billing-section {
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  padding: 1.6rem;
+  margin-bottom: 1.6rem;
+}
+
+.billing-section-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.6rem;
+  color: #02c39a;
+  font-weight: bold;
+}
+
+.payment-method {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-radius: 0.8rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.payment-method:hover {
+  border-color: #02c39a;
+}
+
+.payment-method.active {
+  border-color: #02c39a;
+  background-color: #f0fcf9;
+}
+
+.payment-method-icon {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  border-radius: 0.5rem;
+  margin-right: 1rem;
+  color: #02c39a;
+  font-size: 2rem;
+}
+
+.payment-method-info {
+  flex: 1;
+}
+
+.payment-method-name {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.payment-method-details {
+  color: #777;
+  font-size: 1.2rem;
+}
+
+.add-payment-btn {
+  width: 100%;
+  padding: 1rem;
+  background-color: #f5f5f5;
+  border: 1px dashed #aaa;
+  border-radius: 0.8rem;
+  color: #555;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.add-payment-btn:hover {
+  background-color: #eee;
+}
+
+.billing-history-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.billing-history-item:last-child {
+  border-bottom: none;
+}
+
+.billing-history-date {
+  color: #777;
+  font-size: 1.2rem;
+}
+
+.billing-history-amount {
+  font-weight: bold;
+}
+
+.billing-history-status {
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+}
+
+.status-paid {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.billing-history-details {
+  color: #02c39a;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.billing-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ddd;
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.no-billing {
+  text-align: center;
+  padding: 3rem;
+  color: #777;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .billing-container {
+    flex-direction: column;
+  }
+}

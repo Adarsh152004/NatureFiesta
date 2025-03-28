@@ -63,3 +63,21 @@ exports.getAccount = (req, res) => {
     title: 'Account',
   });
 };
+
+exports.order = (req, res) => {
+  res.status(200).render('orders', {
+    title: 'Orders',
+  });
+};
+
+exports.reviews = (req, res) => {
+  res.status(200).render('reviews', {
+    title: 'All Reviews',
+  });
+};
+
+exports.billing = (req, res) => {
+  res.status(200).render('billing', {
+    title: 'Billing',
+  });
+};
