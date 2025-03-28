@@ -1,0 +1,45 @@
+extends account 
+
+block content
+    .user
+        include navigation
+        .user-content.flex-fix 
+            .user-content-billing
+                h2.form-heading Billing & Payments
+                .billing-container
+                    .billing-methods
+                        .billing-section
+                            h3.billing-section-title Payment Methods
+                            .payment-method
+                                .payment-method-icon
+                                    i.fab.fa-cc-visa
+                                .payment-method-info
+                                    .payment-method-name Visa Ending in 4242
+                                    .payment-method-details Expires 12/25
+                            .payment-method.active
+                                .payment-method-icon
+                                    i.fab.fa-paypal
+                                .payment-method-info
+                                    .payment-method-name PayPal
+                                    .payment-method-details user@example.com
+                            button.add-payment-btn
+                                i.fas.fa-plus
+                                | Add New Payment Method
+
+                    .billing-history
+                        .billing-section
+                            h3.billing-section-title Payment History
+                            .billing-history-item
+                                .billing-history-date 2023-07-15
+                                .billing-history-amount ₹2,896
+                                .billing-history-status.status-paid Paid
+                                .billing-history-details View Invoice
+                            .billing-history-item
+                                .billing-history-date 2023-06-28
+                                .billing-history-amount ₹1,499
+                                .billing-history-status.status-pending Pending
+                                .billing-history-details View Invoice
+                            .billing-total
+                                .billing-summary-label Total Spent:
+                                .billing-summary-value ₹4,395
+                            .no-billing No billing history found
