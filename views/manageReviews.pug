@@ -1,0 +1,86 @@
+extends account
+
+block content
+  .user
+    include navigation
+    .user-content#admin-reviews
+        h2.admin-heading Review Management
+        .admin-controls
+          select.filter-select
+            option All Reviews
+            option Approved
+            option Pending
+            option Flagged
+        .review-list
+          // Each loop for iterating through reviews (commented out for now)
+          // each review in reviews
+          //   .admin-review-card
+          //     .review-header
+          //       .user-info
+          //         img.user-avatar(src=review.user.avatar)
+          //         span.user-name= review.user.name
+          //       .review-meta
+          //         span.rating ★★★★☆
+          //         span.date= review.date
+          //     .review-content
+          //       p= review.text
+          //       .review-images
+          //         each img in review.images
+          //           img.review-thumbnail(src=img)
+          //     .review-actions
+          //       button.action-btn.approve-btn Approve
+          //       button.action-btn.delete-btn Delete
+          //       button.action-btn.flag-btn Flag
+
+          // Dummy Data (replace with actual `each` loop later)
+          .admin-review-card
+            .review-header
+              .user-info
+                img.user-avatar(src="img/Seeds/seed1.jpeg")
+                span.user-name John Doe
+              .review-meta
+                span.rating ★★★★☆
+                span.date 2025-03-30
+            .review-content
+              p This product is amazing! I had a great experience, and it worked just as expected. Highly recommended.
+              .review-images
+                img.review-thumbnail(src="img/Seeds/seed3.jpeg")
+                img.review-thumbnail(src="img/Seeds/seed5.jpeg")
+            .review-actions
+              button.action-btn.approve-btn Approve
+              button.action-btn.delete-btn Delete
+              button.action-btn.flag-btn Flag
+
+          .admin-review-card
+            .review-header
+              .user-info
+                img.user-avatar(src="img/Seeds/seed6.jpeg")
+                span.user-name Jane Smith
+              .review-meta
+                span.rating ★★★☆☆
+                span.date 2025-03-28
+            .review-content
+              p The product is good, but there were some issues with the shipping. It took longer than expected.
+              .review-images
+                img.review-thumbnail(src="img/Seeds/seed8.jpeg")
+            .review-actions
+              button.action-btn.approve-btn Approve
+              button.action-btn.delete-btn Delete
+              button.action-btn.flag-btn Flag
+
+          .admin-review-card
+            .review-header
+              .user-info
+                img.user-avatar(src="https://via.placeholder.com/150")
+                span.user-name Bob Brown
+              .review-meta
+                span.rating ★☆☆☆☆
+                span.date 2025-03-25
+            .review-content
+              p I am very disappointed with this product. It didn’t work as expected and I am requesting a refund.
+              .review-images
+                img.review-thumbnail(src="img/Seeds/seed9.jpeg")
+            .review-actions
+              button.action-btn.approve-btn Approve
+              button.action-btn.delete-btn Delete
+              button.action-btn.flag-btn Flag

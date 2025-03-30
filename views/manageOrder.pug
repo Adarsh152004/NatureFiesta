@@ -1,0 +1,72 @@
+extends account 
+
+block content
+    .user
+      include navigation
+      .user-content#admin-orders
+          h2.admin-heading Order Management
+          .admin-controls
+            input.search-input(type="text" placeholder="Search orders...")
+            select.filter-select
+              option All Statuses
+              option Pending
+              option Completed
+              option Cancelled
+          table.admin-table
+            thead
+              tr
+                th Order ID
+                th Customer
+                th Amount
+                th Date
+                th Status
+                th Actions
+            tbody
+              tr
+                td 001
+                td John Doe
+                td $100.00
+                td 2025-03-30
+                td
+                  span.status-badge(class="pending") Pending
+                td
+                  button.action-btn.view-btn
+                    i.fas.fa-eye
+                  select.status-select
+                    option(value="pending") Pending
+                    option(value="completed") Completed
+                    option(value="cancelled") Cancelled
+                  button.action-btn.delete-btn
+                    i.fas.fa-trash
+              tr
+                td 002
+                td Jane Smith
+                td $250.50
+                td 2025-03-28
+                td
+                  span.status-badge(class="completed") Completed
+                td
+                  button.action-btn.view-btn
+                    i.fas.fa-eye
+                  select.status-select
+                    option(value="pending") Pending
+                    option(value="completed") Completed
+                    option(value="cancelled") Cancelled
+                  button.action-btn.delete-btn
+                    i.fas.fa-trash
+              tr
+                td 003
+                td Bob Brown
+                td $45.75
+                td 2025-03-25
+                td
+                  span.status-badge(class="cancelled") Cancelled
+                td
+                  button.action-btn.view-btn
+                    i.fas.fa-eye
+                  select.status-select
+                    option(value="pending") Pending
+                    option(value="completed") Completed
+                    option(value="cancelled") Cancelled
+                  button.action-btn.delete-btn
+                    i.fas.fa-trash

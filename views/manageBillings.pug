@@ -1,0 +1,75 @@
+extends account
+
+block content
+  .user
+    include navigation
+    .user-content#admin-billings
+        h2.admin-heading Billing Management
+        .admin-controls
+          input.date-filter(type="date")
+          select.status-filter
+            option All Payments
+            option Successful
+            option Pending
+            option Failed
+        table.admin-table
+          thead
+            tr
+              th Transaction ID
+              th User
+              th Amount
+              th Method
+              th Date
+              th Status
+              th Actions
+          tbody
+            // Each loop for iterating through transactions (commented out for now)
+            // each transaction in transactions
+            //   tr
+            //     td= transaction.id
+            //     td= transaction.user
+            //     td= transaction.amount
+            //     td= transaction.method
+            //     td= transaction.date
+            //     td
+            //       span.status-badge(class=transaction.status)= transaction.status
+            //     td
+            //       button.action-btn.refund-btn Refund
+            //       button.action-btn.view-details-btn Details
+
+            // Dummy Data (replace with actual `each` loop later)
+            tr
+              td 001
+              td John Doe
+              td $100.00
+              td Credit Card
+              td 2025-03-30
+              td
+                span.status-badge(class="successful") Successful
+              td
+                button.action-btn.refund-btn Refund
+                button.action-btn.view-details-btn Details
+
+            tr
+              td 002
+              td Jane Smith
+              td $250.50
+              td PayPal
+              td 2025-03-28
+              td
+                span.status-badge(class="pending") Pending
+              td
+                button.action-btn.refund-btn Refund
+                button.action-btn.view-details-btn Details
+
+            tr
+              td 003
+              td Bob Brown
+              td $45.75
+              td Bank Transfer
+              td 2025-03-25
+              td
+                span.status-badge(class="failed") Failed
+              td
+                button.action-btn.refund-btn Refund
+                button.action-btn.view-details-btn Details

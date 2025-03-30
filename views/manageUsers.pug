@@ -1,0 +1,94 @@
+extends account
+
+block content
+  .user
+    include navigation
+    .user-content#admin-users
+        h2.admin-heading User Management
+        .admin-controls
+          input.search-input(type="text" placeholder="Search users...")
+          select.role-filter
+            option All Roles
+            option Admin
+            option Customer
+            option Vendor
+        table.admin-table
+          thead
+            tr
+              th User
+              th Email
+              th Role
+              th Joined
+              th Status
+              th Actions
+          tbody
+            // Each loop for iterating through users (commented out for now)
+            // each user in users
+            //   tr
+            //     td
+            //       .user-info
+            //         img.user-avatar(src=user.avatar)
+            //         span= user.name
+            //     td= user.email
+            //     td
+            //       span.role-badge(class=user.role)= user.role
+            //     td= user.joined
+            //     td
+            //       span.status-badge(class=user.status)= user.status
+            //     td
+            //       button.action-btn.edit-btn
+            //         i.fas.fa-edit
+            //       button.action-btn.delete-btn
+            //         i.fas.fa-trash
+
+            // Dummy Data (replace with actual `each` loop later)
+            tr
+              td
+                .user-info
+                  img.user-avatar(src="img/Seeds/seed1.jpeg")
+                  span John Doe
+              td john.doe@example.com
+              td
+                span.role-badge(class="admin") Admin
+              td 2025-03-20
+              td
+                span.status-badge(class="active") Active
+              td
+                button.action-btn.edit-btn
+                  i.fas.fa-edit
+                button.action-btn.delete-btn
+                  i.fas.fa-trash
+
+            tr
+              td
+                .user-info
+                  img.user-avatar(src="img/Seeds/seed1.jpeg")
+                  span Jane Smith
+              td jane.smith@example.com
+              td
+                span.role-badge(class="customer") Customer
+              td 2025-03-18
+              td
+                span.status-badge(class="inactive") Inactive
+              td
+                button.action-btn.edit-btn
+                  i.fas.fa-edit
+                button.action-btn.delete-btn
+                  i.fas.fa-trash
+
+            tr
+              td
+                .user-info
+                  img.user-avatar(src="img/Seeds/seed1.jpeg")
+                  span Bob Brown
+              td bob.brown@example.com
+              td
+                span.role-badge(class="vendor") Vendor
+              td 2025-03-15
+              td
+                span.status-badge(class="active") Active
+              td
+                button.action-btn.edit-btn
+                  i.fas.fa-edit
+                button.action-btn.delete-btn
+                  i.fas.fa-trash

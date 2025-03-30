@@ -22,6 +22,26 @@ router.get('/cart', authController.isLoggedIn, viewsController.cart);
 router.get('/orders', authController.isLoggedIn, viewsController.order);
 router.get('/reviews', authController.isLoggedIn, viewsController.reviews);
 router.get('/billing', authController.isLoggedIn, viewsController.billing);
+router.get(
+  '/manageOrder',
+  authController.isLoggedIn,
+  viewsController.manageOrder
+);
+router.get(
+  '/manageReviews',
+  authController.isLoggedIn,
+  viewsController.manageReviews
+);
+router.get(
+  '/manageBillings',
+  authController.isLoggedIn,
+  viewsController.manageBillings
+);
+router.get(
+  '/manageUsers',
+  authController.isLoggedIn,
+  viewsController.manageUsers
+);
 
 router.get('/me', authController.protect, viewsController.getAccount);
 

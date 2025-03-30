@@ -84,3 +84,27 @@ exports.billing = (req, res) => {
     title: 'Billing',
   });
 };
+
+exports.manageOrder = (req, res) => {
+  res.status(200).render('manageOrder', {
+    title: 'Admin Panel-Orders',
+  });
+};
+
+exports.manageReviews = (req, res) => {
+  res.status(200).render('manageReviews', {
+    title: 'Admin Panel-Reviews',
+  });
+};
+
+exports.manageBillings = (req, res) => {
+  res.status(200).render('manageBillings', {
+    title: 'Admin Panel-Billings',
+  });
+};
+
+exports.manageUsers = (req, res) => {
+  res.status(200).render('manageUsers', {
+    title: 'Admin Panel-Users',
+  });
+};

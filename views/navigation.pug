@@ -13,15 +13,15 @@
         | Billing
     if user.role === 'admin'
         p(style="border-bottom: 2px solid rgb(238, 238, 238); margin: 1rem 0 0 1rem") Admin
-        a.user-nav-link(href="/billing")
+        a.user-nav-link(href="/manageOrder")
             i.fa-solid.fa-bag-shopping.user-nav-link__icon
             | Manage Order
-        a.user-nav-link(href="/billing")
+        a.user-nav-link(href="/manageReviews")
             i.fa-solid.fa-star.user-nav-link__icon
             | Manage Reviews
-        a.user-nav-link(href="/billing")
+        a.user-nav-link(href="/manageBillings")
             i.fa-solid.fa-wallet.user-nav-link__icon
             | Manage Billings
-        a.user-nav-link(href="/billing")
+        a.user-nav-link(href="/manageUsers ")
             i.fa-solid.fa-users.user-nav-link__icon
             | Manage Users
