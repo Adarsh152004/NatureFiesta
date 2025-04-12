@@ -235,6 +235,16 @@ body {
   width: 100%;
 }
 
+.far.fa-times-circle {
+  color: red;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.far.fa-times-circle:hover {
+  transform: scale(1.2);
+}
+
 /* ///////////////////////////// */
 
 .main-content {

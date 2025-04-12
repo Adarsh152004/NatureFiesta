@@ -6,7 +6,7 @@ block content
     .user-content.flex-fix
       .user-content-profile
         img.user-content-profile_picture(src=`/img/users/${user.name.split(' ')[0]}.jpg` alt=`${user.name}`)
-        input.form__upload(type="file" name="photo" id="photo")
+        input.form__upload(type="file" accept='image/*' name="photo" id="photo")
         label(for="photo")
           i.fa-solid.fa-user-pen.profile-edit__icon
           | Edit picture
