@@ -7,42 +7,40 @@ block content
             .user-content-orders
                 h2.form-heading Order History
                 .order-history
-                    //- Order Card
-                    .order-card
-                        .order-header
-                            .order-id #ORD-20230715-001
-                            .order-date 2023-07-15
-                            .order-status.status-completed Completed
-                        .order-details
-                            .order-items
-                                .order-item
-                                    img.order-item-img(src="/img/Seeds/seed1.jpeg" alt="Product")
-                                    .order-item-info
-                                        .order-item-name Organic Cotton T-Shirt
-                                        .order-item-price ₹1,299
-                                        .order-item-quantity Quantity: 2
-                                .order-item
-                                    img.order-item-img(src="/img/Seeds/seed2.jpeg" alt="Product")
-                                    .order-item-info
-                                        .order-item-name Bamboo Toothbrush Set
-                                        .order-item-price ₹399
-                                        .order-item-quantity Quantity: 1
-                            .order-summary
-                                .order-summary-row
-                                    .order-summary-label Subtotal:
-                                    .order-summary-value ₹2,997
-                                .order-summary-row
-                                    .order-summary-label Shipping:
-                                    .order-summary-value ₹99
-                                .order-summary-row
-                                    .order-summary-label Discount:
-                                    .order-summary-value -₹200
-                                .order-total
-                                    .order-summary-label Total:
-                                    .order-summary-value ₹2,896
-                        .order-actions
-                            button.order-action-btn.order-action-primary Re-order
-                            button.order-action-btn.order-action-secondary View Details
-
-                    //- Repeat order cards as needed
-                    .no-orders No orders found
+                    if orders.length > 0
+                        each order in orders
+                            .order-card
+                                .order-header
+                                    .order-id #ORD-#{order._id.toString().slice(-6).toUpperCase()}
+                                    .order-date= order.createdAt.toLocaleDateString()
+                                    .order-status(class=`status-${order.status}`)= order.status
+                                .order-details
+                                    .order-items
+                                        each item in order.items
+                                            .order-item
+                                                img.order-item-img(src=/img/${item.product.category}/${item.product.imageCover}, alt="Product")
+                                                .order-item-info
+                                                    .order-item-name= item.product.name
+                                                    .order-item-price ₹#{item.price}
+                                                    .order-item-quantity Quantity: #{item.quantity}
+                                    .order-summary
+                                        .order-summary-row
+                                            .order-summary-label Subtotal:
+                                            .order-summary-value ₹#{order.subtotal}
+                                        .order-summary-row
+                                            .order-summary-label Shipping:
+                                            .order-summary-value ₹#{order.shipping}
+                                        if order.discount > 0
+                                            .order-summary-row
+                                                .order-summary-label Discount:
+                                                .order-summary-value -₹#{order.discount}
+                                        .order-total
+                                            .order-summary-label Total:
+                                            .order-summary-value ₹#{order.totalAmount}
+                                .order-actions
+                                    button.order-action-btn.order-action-primary Re-order
+                                    button.order-action-btn.order-action-secondary View Details
+                    else
+                        .no-orders 
+                            i.fas.fa-box-open
+                            | No orders found

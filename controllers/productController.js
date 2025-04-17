@@ -10,6 +10,7 @@ exports.aliasTopProducts = (req, res, next) => {
   req.query.fields = 'name,price,ratingsAverage,summary,difficulty';
   next();
 };
+
 exports.getAllProduct = factory.getAll(Product);
 exports.getProduct = factory.getOne(Product, { path: 'reviews' });
 exports.createProduct = factory.createOne(Product);

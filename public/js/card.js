@@ -100,104 +100,104 @@
 //   }
 // });
 
-// // Get product ID from URL
-// function getProductIdFromURL() {
-//   const urlParams = new URLSearchParams(window.location.search);
-//   return parseInt(urlParams.get('id')) || 1; // Default to 1 if no ID found
-// }
+// Get product ID from URL
+function getProductIdFromURL() {
+  const urlParams = new URLSearchParams(window.location.search);
+  return parseInt(urlParams.get('id')) || 1; // Default to 1 if no ID found
+}
 
-// // Get product by ID
-// function getProductById(id) {
-//   return products.find((product) => product.id === id) || products[0];
-// }
+// Get product by ID
+function getProductById(id) {
+  return products.find((product) => product.id === id) || products[0];
+}
 
-// // Load product details on the single product page
-// async function loadProductDetails() {
-//   const productId = getProductIdFromURL();
-//   let product;
+// Load product details on the single product page
+async function loadProductDetails() {
+  const productId = getProductIdFromURL();
+  let product;
 
-//   // Try to fetch the specific product by ID first
-//   const fetchedProduct = await fetchProductById(productId);
-//   if (fetchedProduct) {
-//     product = fetchedProduct;
-//   } else {
-//     // Fall back to the products array if API call fails
-//     product = getProductById(productId);
-//   }
+  // Try to fetch the specific product by ID first
+  const fetchedProduct = await fetchProductById(productId);
+  if (fetchedProduct) {
+    product = fetchedProduct;
+  } else {
+    // Fall back to the products array if API call fails
+    product = getProductById(productId);
+  }
 
-//   if (product) {
-//     // Update product name, price, description
-//     document.getElementById('product-name').textContent = product.name;
-//     document.getElementById('product-price').textContent =
-//       `Rs. ${product.price}`;
-//     document.getElementById('product-description').textContent =
-//       product.description;
+  if (product) {
+    // Update product name, price, description
+    document.getElementById('product-name').textContent = product.name;
+    document.getElementById('product-price').textContent =
+      `Rs. ${product.price}`;
+    document.getElementById('product-description').textContent =
+      product.description;
 
-//     // Update main image and thumbnails
-//     const mainImage = document.getElementById('main-product-image');
-//     if (mainImage) {
-//       mainImage.src = product.images[0];
-//     }
+    // Update main image and thumbnails
+    const mainImage = document.getElementById('main-product-image');
+    if (mainImage) {
+      mainImage.src = product.images[0];
+    }
 
-//     // Update small images
-//     const smallImages = document.querySelectorAll('.small-image');
-//     smallImages.forEach((img, index) => {
-//       if (product.images[index]) {
-//         img.src = product.images[index];
-//       }
-//     });
+    // Update small images
+    const smallImages = document.querySelectorAll('.small-image');
+    smallImages.forEach((img, index) => {
+      if (product.images[index]) {
+        img.src = product.images[index];
+      }
+    });
 
-//     // Update rating
-//     const ratingCount = document.querySelector('.rating-count');
-//     if (ratingCount) {
-//       ratingCount.textContent = `(${product.rating}/5)`;
-//     }
-//   }
-// }
+    // Update rating
+    const ratingCount = document.querySelector('.rating-count');
+    if (ratingCount) {
+      ratingCount.textContent = `(${product.rating}/5)`;
+    }
+  }
+}
 
-// // Load related products
-// function loadRelatedProducts() {
-//   const currentProductId = getProductIdFromURL();
-//   const relatedProductsContainer = document.querySelector(
-//     '.related-products .main-content-products'
-//   );
+// Load related products
+function loadRelatedProducts() {
+  const currentProductId = getProductIdFromURL();
+  const relatedProductsContainer = document.querySelector(
+    '.related-products .main-content-products'
+  );
 
-//   if (relatedProductsContainer) {
-//     // Clear container
-//     relatedProductsContainer.innerHTML = '';
+  if (relatedProductsContainer) {
+    // Clear container
+    relatedProductsContainer.innerHTML = '';
 
-//     // Filter products to exclude current product
-//     const relatedProducts = products.filter(
-//       (product) => product.id !== currentProductId
-//     );
+    // Filter products to exclude current product
+    const relatedProducts = products.filter(
+      (product) => product.id !== currentProductId
+    );
 
-//     // Create product cards
-//     relatedProducts.forEach((product) => {
-//       const productCard = document.createElement('div');
-//       productCard.className = 'main-content-product-card';
+    // Create product cards
+    relatedProducts.forEach((product) => {
+      const productCard = document.createElement('div');
+      productCard.className = 'main-content-product-card';
 
-//       productCard.innerHTML = `
-//         <a href="sproduct.html?id=${product.id}">
-//           <img
-//             class="main-content-product-card_img"
-//             src="${product.images[0]}"
-//             alt="${product.name}"
-//           />
-//         </a>
-//         <p class="main-content-product-card_name">${product.name}</p>
-//         <p class="main-content-product-card_quantity">${product.quantity}</p>
-//         <div class="main-content-product-card_footer">
-//           <p class="main-content-product-card_price">${product.price} RS</p>
-//           <a href="#" class="main-content-product-card_addcart">
-//             <i class="fa-solid fa-plus"></i>
-//           </a>
-//         </div>
-//       `;
+      productCard.innerHTML = `
+        <a href="sproduct.html?id=${product.id}">
+          <img
+            class="main-content-product-card_img"
+            src="${product.images[0]}"
+            alt="${product.name}"
+          />
+        </a>
+        <p class="main-content-product-card_name">${product.name}</p>
+        <p class="main-content-product-card_quantity">${product.quantity}</p>
+        <div class="main-content-product-card_footer">
+          <p class="main-content-product-card_price">${product.price} RS</p>
+          <a href="#" class="main-content-product-card_addcart">
+            <i class="fa-solid fa-plus"></i>
+          </a>
+        </div>
+      `;
 
-//       relatedProductsContainer.appendChild(productCard);
-//     });
-//   }
-// }
+      relatedProductsContainer.appendChild(productCard);
+    });
+  }
+}
 
 // Get cart from localStorage or initialize
 let cart = JSON.parse(localStorage.getItem('cart')) || [];

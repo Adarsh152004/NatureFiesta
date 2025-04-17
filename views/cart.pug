@@ -12,10 +12,24 @@ block content
           td Quantity
           td Subtotal
       tbody#cart-body
+        each item in cart.items
+          tr.cart-item
+            td 
+              button.remove-item(data-product-id=item.product._id) ×
+            td
+              img.cart-item-img(src=/img/${item.product.category}/${item.product.imageCover}, alt=item.product.name)
+            td= item.product.name
+            td ₹#{item.product.price}
+            td
+              input.cart-quantity(type="number", value=item.quantity, min="1", data-product-id=item.product._id)
+            td ₹#{item.product.price * item.quantity}
       tfoot
         tr
           td(colspan="5") Total
-          td#cart-total Rs. 0
+          td#cart-total ₹#{cart.total}
         tr
           td(colspan="6")
-            a.checkout-btn(href="#", role="button") Checkout
+            form.checkout-form
+              button.checkout-btn(type="submit")
+                i.fas.fa-lock
+                |  Proceed to Checkout

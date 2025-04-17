@@ -14,16 +14,17 @@ block content
             img.main-image(src=`/img/${product.category}/${product.imageCover}`, alt="Main Product Image")
           
           div.small-images-container
-            div.small-image-box.active
-              img.small-image(src=`/img/${product.category}/${product.images[0]}`, alt="Small Image 1", onclick=`changeImage('/img/${product.category}/${product.images[0]}')`)
-            div.small-image-box
-              img.small-image(src=`/img/${product.category}/${product.images[1]}`, alt="Small Image 1", onclick=`changeImage('/img/${product.category}/${product.images[1]}')`)
-            div.small-image-box
-              img.small-image(src=`/img/${product.category}/${product.images[2]}`, alt="Small Image 1", onclick=`changeImage('/img/${product.category}/${product.images[2]}')`)
+            each image, index in product.images
+              div.small-image-box(class=index === 0 ? 'active' : '')
+                img.small-image(
+                  src=`/img/${product.category}/${image}`, 
+                  alt=`Product Image ${index + 1}`,
+                  onclick=`changeImage('/img/${product.category}/${image}')`
+                )
 
         div.product-details
           h2.product-name#product-name= product.name
-          h3.product-price#product-price Rs. #{product.price}
+          h3.product-price#product-price ₹ #{product.price}
           
           div.product-size-options
             h4 Select Size:
@@ -47,7 +48,13 @@ block content
             a.add-to-cart-btn(href="/cart", role="button")
               i.fas.fa-shopping-cart
               |  Add to Cart
-            a.buy-now-btn(href="#", role="button") Buy Now
+            form.buy-now-form(data-product-id=product._id)
+              input(type="hidden", name="productName", value=product.name)
+              input(type="hidden", name="amount", value=product.price)
+              input(type="hidden", name="description", value=product.description)
+              button.buy-now-btn(type="submit")
+                i.fas.fa-bolt
+                |  Buy Now
 
           div.product-features
             div.feature
