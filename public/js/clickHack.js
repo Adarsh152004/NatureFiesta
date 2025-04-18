@@ -33,8 +33,35 @@ export function setupEventListeners() {
 
     addCart.forEach((add) => {
       add.addEventListener('click', function () {
-        const productSlug = this.getAttribute('data-slug');
-        console.log('add is working : ' + productSlug);
+        const productDetails = this.getAttribute('data-slug');
+        const [slug, price, name, image, quantity] = JSON.parse(productDetails);
+
+        const newItem = {
+          slug,
+          price,
+          name,
+          image,
+          quantity: parseInt(quantity, 10),
+        };
+
+        // Step 1: Get existing cart (or create a new one)
+        const cart = JSON.parse(localStorage.getItem('cartData')) || [];
+
+        // Step 2: Check if item already exists (by slug)
+        const existingIndex = cart.findIndex(
+          (item) => item.slug === newItem.slug
+        );
+
+        if (existingIndex !== -1) {
+          // Step 3a: If item exists, increase quantity
+          cart[existingIndex].quantity += newItem.quantity;
+        } else {
+          // Step 3b: If item doesn't exist, add it
+          cart.push(newItem);
+        }
+
+        // Step 4: Save back to localStorage
+        localStorage.setItem('cartData', JSON.stringify(cart));
       });
     });
 

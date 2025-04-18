@@ -43,6 +43,6 @@ block content
         p.main-content-product-card_quantity= `${product.quantity} in stock`
         div.main-content-product-card_footer
           p.main-content-product-card_price= `${product.price}₹`
-          button.main-content-product-card_addcart(data-slug=product.slug)
+          button.main-content-product-card_addcart(data-slug=[product.slug, product.price, product.name, product.imageCover, product.quantity])
             i.fa-solid.fa-plus
 
