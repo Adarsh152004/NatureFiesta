@@ -13,6 +13,7 @@ const productRoutes = require('./routes/productRoutes');
 const userRoutes = require('./routes/userRoutes');
 const reviewRouter = require('./routes/reviewRoutes');
 const viewRouter = require('./routes/viewRoutes');
+const paymentRoute = require('./routes/paymentRoute');
 
 const AppError = require('./utils/appError');
 const { globalErrorHandler } = require('./controllers/errorController');
@@ -29,13 +30,17 @@ app.use(express.static(path.join(__dirname, 'public'))); // Middleware to serve 
 //  Set Security HTTP headers
 
 app.use(
-  helmet({
-    contentSecurityPolicy: {
-      directives: {
-        defaultSrc: ["'self'"],
-        scriptSrc: ["'self'", 'https://cdnjs.cloudflare.com'],
-        connectSrc: ["'self'", 'ws://127.0.0.1:*', 'ws://localhost:*'], // ✅ Allow WebSockets on ANY port
-      },
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: [
+        "'self'",
+        "'unsafe-inline'", // TEMPORARY: Only use for dev
+        'https://cdnjs.cloudflare.com',
+        'https://checkout.razorpay.com',
+      ],
+      frameSrc: ["'self'", 'https://api.razorpay.com'],
+      connectSrc: ["'self'", 'ws://127.0.0.1:*', 'ws://localhost:*'],
     },
   })
 );
@@ -89,6 +94,7 @@ app.use('/', viewRouter);
 app.use('/api/products', productRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/reviews', reviewRouter);
+app.use('/', paymentRoute);
 
 app.get('/test', (req, res) => {
   res.send('Server is running!');

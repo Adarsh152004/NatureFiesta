@@ -6,12 +6,21 @@ export function setupEventListeners() {
     const categoryCards = document.querySelectorAll(
       '.main-content-categories-card'
     );
+    const addCart = document.querySelectorAll(
+      '.main-content-product-card_addcart'
+    );
+
     const cart = document.querySelector('.main-bar-cart');
 
     productCards.forEach((card) => {
-      card.addEventListener('click', function () {
-        const productId = this.getAttribute('data-id'); // Get the product ID
-        window.location.href = `/product/${productId}`; // Redirect to the product page
+      card.addEventListener('click', function (e) {
+        if (
+          e.target.tagName.toLowerCase() !== 'button' &&
+          !e.target.closest('button')
+        ) {
+          const productId = this.getAttribute('data-id');
+          window.location.href = `/product/${productId}`;
+        }
       });
     });
 
@@ -19,6 +28,13 @@ export function setupEventListeners() {
       card.addEventListener('click', function () {
         const categoryId = this.getAttribute('data-id');
         window.location.href = `/categories/${categoryId}`;
+      });
+    });
+
+    addCart.forEach((add) => {
+      add.addEventListener('click', function () {
+        const productSlug = this.getAttribute('data-slug');
+        console.log('add is working : ' + productSlug);
       });
     });
 

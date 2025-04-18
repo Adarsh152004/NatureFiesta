@@ -12657,17 +12657,26 @@ function setupEventListeners() {
   document.addEventListener('DOMContentLoaded', function () {
     var productCards = document.querySelectorAll('.main-content-product-card');
     var categoryCards = document.querySelectorAll('.main-content-categories-card');
+    var addCart = document.querySelectorAll('.main-content-product-card_addcart');
     var cart = document.querySelector('.main-bar-cart');
     productCards.forEach(function (card) {
-      card.addEventListener('click', function () {
-        var productId = this.getAttribute('data-id'); // Get the product ID
-        window.location.href = "/product/".concat(productId); // Redirect to the product page
+      card.addEventListener('click', function (e) {
+        if (e.target.tagName.toLowerCase() !== 'button' && !e.target.closest('button')) {
+          var productId = this.getAttribute('data-id');
+          window.location.href = "/product/".concat(productId);
+        }
       });
     });
     categoryCards.forEach(function (card) {
       card.addEventListener('click', function () {
         var categoryId = this.getAttribute('data-id');
         window.location.href = "/categories/".concat(categoryId);
+      });
+    });
+    addCart.forEach(function (add) {
+      add.addEventListener('click', function () {
+        var productSlug = this.getAttribute('data-slug');
+        console.log('add is working : ' + productSlug);
       });
     });
     cart.addEventListener('click', function () {
@@ -12946,7 +12955,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56670" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53048" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

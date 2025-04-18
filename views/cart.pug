@@ -1,21 +1,22 @@
 extends base
 
 block content
-  section#cart.section-p1
-    table(width="100%")
-      thead
-        tr
-          td Remove
-          td Image
-          td Product
-          td Price
-          td Quantity
-          td Subtotal
-      tbody#cart-body
-      tfoot
-        tr
-          td(colspan="5") Total
-          td#cart-total Rs. 0
-        tr
-          td(colspan="6")
-            a.checkout-btn(href="#", role="button") Checkout
+  .section-cart
+    a.cart-back(href="/") < Your Cart
+    .section-cart-rows 
+      .cart-product 
+        p Product
+        each product in products 
+          p #{product.name}
+      .cart-price 
+        p Price
+        p 1000
+        p 1000
+      .cart-quantity
+        p Quantity
+        p 1
+        p 1
+      .cart-subtotal 
+        p Subtotal
+        p 1000
+        p 1000
